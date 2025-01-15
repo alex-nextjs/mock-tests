@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { WEBSITE_NAME } from '@/constants/constants';
 import { Monitor, BarChart2, Book } from 'lucide-react';
 import Image from 'next/image';
 
@@ -9,12 +10,13 @@ export function Hero() {
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              &#34;Learn, Practice, and Succeed – Your SSC Journey Starts Here!&#34;
+              &#34;Learn, Practice, and Succeed – Your SSC Journey Starts
+              Here!&#34;
             </h1>
             <p className="text-lg text-gray-600">
-              Join SSCPrep platform where learning meets achievement. Access
-              interactive tests, quizzes, and mocks, track your progress, and
-              prepare smarter with tailored tools designed for your success.
+              Join {WEBSITE_NAME} platform where learning meets achievement.
+              Access interactive tests, quizzes, and mocks, track your progress,
+              and prepare smarter with tailored tools designed for your success.
             </p>
           </div>
           <div className="flex gap-4">

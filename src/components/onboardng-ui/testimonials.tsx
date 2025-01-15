@@ -1,12 +1,12 @@
 'use client';
 
-import { AnimatedTestimonials } from '@/components/animated-testimonials';
+import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
+import { WEBSITE_NAME } from '@/constants/constants';
 import { useEffect, useState } from 'react';
 
 const testimonials = [
   {
-    quote:
-      'SSCPrep helped me crack my exam in the first attempt. The practice tests and performance analytics were invaluable.',
+    quote: `${WEBSITE_NAME} helped me crack my exam in the first attempt. The practice tests and performance analytics were invaluable.`,
     name: 'Rahul Sharma',
     designation: 'SSC CGL 2023 Qualifier',
     src: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',

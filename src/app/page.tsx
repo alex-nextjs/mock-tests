@@ -1,11 +1,13 @@
-import { Features } from '@/components/features';
-import { HowItWorksTimelineCards } from '@/components/how-it-works';
-import { Navigation } from '@/components/navigation';
-import { Hero } from '@/components/hero';
-import { Testimonials } from '@/components/testimonials';
-import { Pricing } from '@/components/pricing';
-import { FAQ } from '@/components/faq';
-import { Footer } from '@/components/footer';
+import {
+  Hero,
+  FAQ,
+  Features,
+  Footer,
+  HowItWorksTimelineCards,
+  Navigation,
+  Pricing,
+  Testimonials,
+} from '@/components/onboardng-ui';
 
 export default function LandingPage() {
   return (

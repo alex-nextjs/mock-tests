@@ -9,6 +9,11 @@ import {
   Phone,
   MessageCircle,
 } from 'lucide-react';
+import {
+  CREATION_YEAR,
+  SUPPORT_EMAIL,
+  WEBSITE_NAME,
+} from '@/constants/constants';
 
 const socialLinks = [
   { name: 'Facebook', icon: Facebook, href: '#' },
@@ -40,10 +45,10 @@ export function Footer() {
         {/* About Section */}
         <div className="mb-8">
           <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-            About SSCPrep
+            About {WEBSITE_NAME}
           </h3>
           <p className="text-sm">
-            SSCPrep empowers SSC aspirants with AI-driven learning tools,
+            {WEBSITE_NAME} empowers SSC aspirants with AI-driven learning tools,
             interactive tests, and progress tracking to help them excel in their
             exams. Join us to elevate your learning journey!
           </p>
@@ -59,7 +64,7 @@ export function Footer() {
           </div>
           <div className="relative flex justify-center">
             <span className="bg-gray-100 dark:bg-gray-900 px-2 text-sm text-gray-500 dark:text-gray-400">
-              SSCPrep
+              {WEBSITE_NAME}
             </span>
           </div>
         </div>
@@ -93,10 +98,10 @@ export function Footer() {
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-teal-600 dark:text-teal-400" />
                 <a
-                  href="mailto:support@sscprep.com"
+                  href={`mailto:${SUPPORT_EMAIL}`}
                   className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                 >
-                  support@sscprep.com
+                  {SUPPORT_EMAIL}
                 </a>
               </li>
               <li className="flex items-center">
@@ -149,7 +154,10 @@ export function Footer() {
             ))}
           </div>
           <div className="text-center text-sm">
-            <p>&copy; 2025 SSCPrep. All Rights Reserved.</p>
+            <p>
+              &copy; {CREATION_YEAR} | {new Date().getFullYear()} {WEBSITE_NAME}
+              . All Rights Reserved.
+            </p>
             <p className="mt-2">Built with ❤️ for SSC Aspirants</p>
           </div>
         </div>

@@ -129,10 +129,11 @@ export function HowItWorksTimelineCards() {
                       hover:shadow-lg hover:-translate-y-0.5 hover:bg-white
                       before:content-[''] before:absolute before:top-1/2 before:-translate-y-1/2
                       before:border-[12px] before:border-transparent
-                      ${index % 2 === 0
+                      ${
+                        index % 2 === 0
                           ? "before:-left-[24px] before:border-r-gray-200 after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:-left-[20px] after:border-[10px] after:border-transparent after:border-r-white"
                           : "before:-right-[24px] before:border-l-gray-200 after:content-[''] after:absolute after:top-1/2 after:-translate-y-1/2 after:-right-[20px] after:border-[10px] after:border-transparent after:border-l-white"
-                        }
+                      }
                     `}
                     >
                       <h3 className="text-xl font-semibold mb-2">

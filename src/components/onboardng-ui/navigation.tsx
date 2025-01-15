@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Umbrella, Menu } from 'lucide-react';
 import Link from 'next/link';
+import { WEBSITE_NAME } from '@/constants/constants';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +20,9 @@ export function Navigation() {
   return (
     <nav className="flex h-20 items-center justify-between">
       <div className="flex items-center gap-2">
+        {/* TODO: Add Logo Here. */}
         <Umbrella className="h-8 w-8 text-teal-600" />
-        <span className="text-xl font-bold">SSCPrep</span>
+        <span className="text-xl font-bold">{WEBSITE_NAME}</span>
       </div>
       <div className="hidden md:flex items-center space-x-8">
         {navItems.map((item) => (
@@ -34,9 +36,9 @@ export function Navigation() {
         ))}
       </div>
       <div className="hidden md:flex items-center gap-4">
-        <Button variant="ghost" className="text-teal-600">
+        <Link variant="ghost" className="text-teal-600">
           Sign Up
-        </Button>
+        </Link>
         <Button className="bg-teal-600 hover:bg-teal-700">Join</Button>
       </div>
       <div className="md:hidden">
