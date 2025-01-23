@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import { Button, buttonVariants } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Umbrella, Menu } from 'lucide-react';
 import Link from 'next/link';
 import { WEBSITE_NAME } from '@/constants/constants';
+import { cn } from '@/lib/utils';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,17 +30,23 @@ export function Navigation() {
           <Link
             key={item.name}
             href={item.href}
-            className="text-sm font-medium text-gray-700 hover:text-teal-600"
+            className="text-sm font-medium text-gray-700 dark:text-white hover:text-teal-600"
           >
             {item.name}
           </Link>
         ))}
       </div>
       <div className="hidden md:flex items-center gap-4">
-        <Link variant="ghost" className="text-teal-600">
-          Sign Up
+        <Link href={'/auth/register'} className="text-teal-600">
+          Register
         </Link>
-        <Button className="bg-teal-600 hover:bg-teal-700">Join</Button>
+        {/* Login Button */}
+        <button className="px-8 py-2 rounded-full relative bg-teal-600 text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-teal-800 active:scale-[.98]">
+          <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
+          <span className="relative z-20">
+            Login
+          </span>
+        </button>
       </div>
       <div className="md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -66,14 +73,16 @@ export function Navigation() {
                 className="text-teal-600 justify-start"
                 onClick={() => setIsOpen(false)}
               >
-                Sign Up
+                Login
               </Button>
-              <Button
-                className="bg-teal-600 hover:bg-teal-700"
+              <Link
+                href={'/auth/register'}
+                className={cn(buttonVariants({ variant: 'default' }), "bg-teal-600 hover:bg-teal-700")}
                 onClick={() => setIsOpen(false)}
+
               >
-                Join
-              </Button>
+                Register
+              </Link>
             </nav>
           </SheetContent>
         </Sheet>

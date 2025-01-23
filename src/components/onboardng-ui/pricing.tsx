@@ -75,16 +75,16 @@ export function Pricing() {
     <section className="py-20">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-teal-600 dark:text-teal-400 sm:text-4xl">
             Choose a Plan That Fits Your Goals
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400">
             Affordable and flexible options for every learner
           </p>
 
           <div className="mt-8 flex items-center justify-center gap-3">
             <span
-              className={`text-sm ${!isAnnual ? 'text-gray-900 font-medium' : 'text-gray-500'}`}
+              className={`text-sm ${!isAnnual ? 'text-slate-900 dark:text-slate-200 font-medium' : 'text-slate-500 dark:text-slate-400'}`}
             >
               Monthly
             </span>
@@ -94,7 +94,7 @@ export function Pricing() {
               className="data-[state=checked]:bg-[#14B8A6]"
             />
             <span
-              className={`text-sm ${isAnnual ? 'text-gray-900 font-medium' : 'text-gray-500'}`}
+              className={`text-sm ${isAnnual ? 'text-gray-900 dark:text-slate-200 font-medium' : 'text-gray-500 dark:text-slate-400'}`}
             >
               Annually
               <Badge
@@ -107,13 +107,13 @@ export function Pricing() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center md:flex-row p-4 items-stretch gap-4 md:gap-0 max-w-5xl mx-auto">
+        <div className="flex flex-col justify-center md:flex-row p-4 items-stretch gap-4 md:gap-0 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={plan.name}
               className={`
                 relative flex flex-col p-6
-                ${index === 1 ? 'bg-gradient-to-br from-[#14B8A6] to-[#0F766E] text-white md:transform md:scale-105 md:z-10' : 'bg-white'}
+                ${index === 1 ? 'bg-gradient-to-br from-[#14B8A6] via-teal-600 to-[#27b8ac] text-white md:transform md:scale-105 md:z-10' : 'bg-white dark:bg-gradient-to-br dark:from-slate-600 dark:via-slate-800 dark:to-slate-600'}
                 ${index === 0 ? 'md:mr-[-10px]' : ''}
                 ${index === 2 ? 'md:ml-[-10px]' : ''}
                 rounded-2xl hover:shadow-lg transition-shadow duration-300
@@ -134,11 +134,10 @@ export function Pricing() {
               <div
                 className={`
                 inline-flex px-3 py-1 rounded-full text-xs font-medium mb-3 w-fit
-                ${
-                  index === 1
+                ${index === 1
                     ? 'bg-white/10 text-white'
                     : 'bg-[#14B8A6]/10 text-[#14B8A6]'
-                }
+                  }
               `}
               >
                 {plan.badge}
@@ -153,7 +152,7 @@ export function Pricing() {
               </p>
 
               <p
-                className={`text-sm mb-6 ${index === 1 ? 'text-white/80' : 'text-gray-600'}`}
+                className={`text-sm mb-6 ${index === 1 ? 'text-white/80' : 'text-gray-600 dark:text-slate-400'}`}
               >
                 {plan.description}
               </p>
@@ -172,12 +171,12 @@ export function Pricing() {
                       />
                     </div>
                     <span
-                      className={`text-sm ${index === 1 ? 'text-white/90' : 'text-gray-600'}`}
+                      className={`text-sm ${index === 1 ? 'text-white/90' : 'text-gray-600 dark:text-slate-200'}`}
                     >
                       {plan.highlight.some((highlight) =>
                         feature.toLowerCase().includes(highlight)
                       ) ? (
-                        <span>
+                        <span >
                           {feature.split(' ').map((word, wordIndex) =>
                             plan.highlight.some((highlight) =>
                               word.toLowerCase().includes(highlight)

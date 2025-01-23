@@ -2,7 +2,7 @@
 
 import { AnimatedTestimonials } from '@/components/ui/animated-testimonials';
 import { WEBSITE_NAME } from '@/constants/constants';
-import { useEffect, useState } from 'react';
+import useIsClient from '@/hooks/useIsClient';
 
 const testimonials = [
   {
@@ -42,14 +42,10 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
+  const isClient = useIsClient();
   if (!isClient) {
-    return null; // or a loading spinner
+    return null; // or a loading spinner, skeleton, etc.
   }
+
   return <AnimatedTestimonials testimonials={testimonials} autoplay />;
 }

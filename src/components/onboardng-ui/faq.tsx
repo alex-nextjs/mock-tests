@@ -64,13 +64,13 @@ const faqData = [
 
 export function FAQ() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50 dark:bg-slate-950">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-slate-200 sm:text-4xl mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-gray-600 dark:text-slate-400">
             Got questions? We&#39;ve got answers to help you get started.
           </p>
         </div>
@@ -91,10 +91,10 @@ export function FAQ() {
         </Accordion>
 
         <div className="text-center mt-12">
-          <p className="text-lg text-gray-600 mb-4">
+          <p className="text-lg text-gray-600 dark:text-slate-300 mb-4">
             Still have questions? Reach out to our support team.
           </p>
-          <Button className="bg-teal-600 hover:bg-teal-700">
+          <Button className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-700">
             <MessageCircle className="mr-2 h-4 w-4" /> Contact Us
           </Button>
         </div>

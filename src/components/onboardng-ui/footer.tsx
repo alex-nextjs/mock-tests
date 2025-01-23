@@ -14,6 +14,7 @@ import {
   SUPPORT_EMAIL,
   WEBSITE_NAME,
 } from '@/constants/constants';
+import { ThemeSwitcher } from '../ui/theme-switcher';
 
 const socialLinks = [
   { name: 'Facebook', icon: Facebook, href: '#' },
@@ -137,7 +138,17 @@ export function Footer() {
                 </a>
               ))}
             </div>
+            {/* Theme Switch Buttons */}
+            <div className='mt-6'>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                Theme:
+              </h3>
+              <div className="flex space-x-2">
+                <ThemeSwitcher />
+              </div>
+            </div>
           </div>
+
         </div>
 
         {/* Legal Links and Copyright Notice */}

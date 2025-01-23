@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/providers/theme-provider';
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -14,8 +15,7 @@ export const metadata: Metadata = {
     'Prepare for SSC exams like CGL, CHSL, and GD with SSCPrep. Access mock tests, notes, typing practice, CBTs, and comprehensive resources to excel in your SSC journey.',
   keywords:
     'SSC Preparation, SSC CGL, SSC CHSL, Mock Tests, Typing Practice, CBT, EdTech, SSC Notes, SSC GD, SSC Exam Resources',
-  author: 'SSCPrep Team',
-  themeColor: '#0A1128',
+  authors: [{ name: 'SSCPrep Team' }],
   openGraph: {
     title: 'SSCPrep - Your Ultimate SSC Exam Preparation Partner',
     description:
@@ -39,7 +39,6 @@ export const metadata: Metadata = {
     images: ['https://www.sscprep.com/og-image.png'], // replace with your OG image URL
     creator: '@SSCPrep', // replace with your Twitter handle
   },
-  viewport: 'width=device-width, initial-scale=1.0',
   robots: 'index, follow',
 };
 
@@ -49,10 +48,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.className} ${poppins.variable} antialiased`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+
+        >
+          {children}
+        </ThemeProvider>
       </body>
-    </html>
+    </html >
   );
 }
