@@ -139,7 +139,7 @@ export function Footer() {
               ))}
             </div>
             {/* Theme Switch Buttons */}
-            <div className='mt-6'>
+            <div className="mt-6">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
                 Theme:
               </h3>
@@ -148,7 +148,6 @@ export function Footer() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Legal Links and Copyright Notice */}

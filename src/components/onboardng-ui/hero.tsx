@@ -1,7 +1,9 @@
-import { Button } from '@/components/ui/button';
+import { buttonVariants } from '@/components/ui/button';
 import { WEBSITE_NAME } from '@/constants/constants';
+import { cn } from '@/lib/utils';
 import { Monitor, BarChart2, Book } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -10,7 +12,8 @@ export function Hero() {
         <div className="space-y-8">
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground">
-              &#34;Learn, Practice, and Succeed – Your SSC Journey Starts Here!&#34;
+              &#34;Learn, Practice, and Succeed – Your SSC Journey Starts
+              Here!&#34;
             </h1>
             <p className="text-lg text-muted-foreground">
               Join {WEBSITE_NAME} platform where learning meets achievement.
@@ -19,17 +22,24 @@ export function Hero() {
             </p>
           </div>
           <div className="flex gap-4">
-            <Button
-              variant="ghost"
-              className="text-teal-600 dark:text-teal-400 hover:bg-teal-600/10 dark:hover:bg-teal-400/10"
+            <Link
+              href={'/auth/login?explore'}
+              className={cn(
+                buttonVariants({ variant: 'ghost' }),
+                'text-teal-600 dark:text-teal-400 hover:bg-teal-600/10 dark:hover:bg-teal-400/10'
+              )}
             >
               Explore Quizzes
-            </Button>
-            <Button
-              className="bg-teal-600 dark:bg-teal-400 hover:bg-teal-700 dark:hover:bg-teal-500 text-background"
+            </Link>
+            <Link
+              href={'/auth/register?cta=onboarding_page_click'}
+              className={cn(
+                buttonVariants({}),
+                'bg-teal-600 dark:bg-teal-400 hover:bg-teal-700 dark:hover:bg-teal-500 text-background'
+              )}
             >
               Enroll Now
-            </Button>
+            </Link>
           </div>
         </div>
         <div className="relative">
@@ -47,7 +57,9 @@ export function Hero() {
                 <Monitor className="h-5 w-5 text-white dark:text-teal-900" />
               </div>
               <div>
-                <div className="text-sm font-semibold text-foreground">Weekly Live Mocks</div>
+                <div className="text-sm font-semibold text-foreground">
+                  Weekly Live Mocks
+                </div>
                 <div className="text-xs text-muted-foreground">
                   accurately curated by experts
                 </div>

@@ -1,52 +1,29 @@
-"use client"
+'use client';
 
-import { ReactNode } from "react"
-import { motion } from "framer-motion"
-import { usePathname } from "next/navigation"
-import MeteorBackground from '@/app/assets/Meteor.svg';
-type AuthLayoutProps = {
-  children: ReactNode
-}
+import Image from 'next/image';
 
-export default function AuthLayout({ children }: AuthLayoutProps) {
-  const pathName = usePathname()
-  const authType = pathName === '/auth/login' ? 'login' : 'register'
-  console.log(pathName)
+export default function AuthLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
-      {/* Left Side - Desktop Only (60% width) */}
-      <div className="hidden lg:flex lg:w-[60%] relative bg-[url('/auth-bg.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-black/50 flex items-start justify-center p-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-white text-center"
-          >
-            <h1 className="text-4xl font-bold mb-4">{authType === 'login' ? 'Welcome Back' : 'Join Us'}</h1>
-            <p className="text-xl">
-              {authType === 'login'
-                ? 'Sign in to access your personalized dashboard and continue your journey.'
-                : 'Create an account to get started with our exclusive features.'}
-            </p>
-          </motion.div>
-        </div>
+    <div className="flex min-h-full flex-1">
+      {/* Left Column - Content */}
+      <div className="flex flex-1 flex-col justify-center px-4 py-12 lg:py-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+        <div className="mx-auto w-full max-w-sm lg:w-96">{children}</div>
       </div>
 
-      {/* Right Side - Mobile & Desktop (40% width on desktop) */}
-      <div className="flex-1 lg:w-[40%] flex items-center justify-center p-4 lg:p-5 bg-gradient-to-br from-sky-100 via-white to-teal-100  dark:from-sky-900 dark:via-slate-600 dark:to-teal-700">
-        <div className="w-full max-w-md lg:max-w-full lg:w-full "> {/* Modified this line */}
-          <div className="min-h-[calc(100vh-2rem)] lg:min-h-full flex items-center justify-center w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="w-full"
-            >
-              {children}
-            </motion.div>
-          </div>
-        </div>
+      {/* Right Column - Background Image */}
+      <div className="relative hidden w-0 flex-1 lg:block">
+        <Image
+          width={1920}
+          height={1080}
+          className="absolute inset-0 h-full w-full object-cover"
+          src="https://images.unsplash.com/photo-1496917756835-20cb06e75b4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1908&q=80"
+          alt=""
+        />
       </div>
     </div>
-  )
+  );
 }

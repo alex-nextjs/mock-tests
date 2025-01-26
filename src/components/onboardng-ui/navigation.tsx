@@ -41,12 +41,12 @@ export function Navigation() {
           Register
         </Link>
         {/* Login Button */}
-        <button className="px-8 py-2 rounded-full relative bg-teal-600 text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-teal-800 active:scale-[.98]">
-          <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
-          <span className="relative z-20">
-            Login
-          </span>
-        </button>
+        <Link
+          href={'/auth/login'}
+          className="px-8 py-2 rounded-full relative bg-teal-600 text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-teal-800 active:scale-[.98]"
+        >
+          <span className="relative z-20">Login</span>
+        </Link>
       </div>
       <div className="md:hidden">
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -68,18 +68,23 @@ export function Navigation() {
                   {item.name}
                 </Link>
               ))}
-              <Button
-                variant="ghost"
-                className="text-teal-600 justify-start"
+              <Link
+                href={'/auth/login'}
+                className={cn(
+                  buttonVariants({ variant: 'ghost' }),
+                  'text-teal-600 justify-start'
+                )}
                 onClick={() => setIsOpen(false)}
               >
                 Login
-              </Button>
+              </Link>
               <Link
                 href={'/auth/register'}
-                className={cn(buttonVariants({ variant: 'default' }), "bg-teal-600 hover:bg-teal-700")}
+                className={cn(
+                  buttonVariants({ variant: 'default' }),
+                  'bg-teal-600 hover:bg-teal-700'
+                )}
                 onClick={() => setIsOpen(false)}
-
               >
                 Register
               </Link>

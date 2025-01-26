@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const AUTH_Background = (props: any) => (
@@ -10,7 +10,11 @@ const AUTH_Background = (props: any) => (
     className="transition-colors duration-300"
     {...props}
   >
-    <rect className="fill-neutral-100 dark:fill-neutral-900" width={1600} height={800} />
+    <rect
+      className="fill-neutral-100 dark:fill-neutral-900"
+      width={1600}
+      height={800}
+    />
     <g className="fill-opacity-60 dark:fill-opacity-40 transition-all duration-300">
       <polygon
         className="fill-teal-50 dark:fill-teal-950"

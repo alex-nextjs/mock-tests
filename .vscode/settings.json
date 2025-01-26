@@ -9,8 +9,5 @@
     "**/*.crswap": true
   },
   "hide-files.files": [],
-  "cSpell.words": [
-    "libsql",
-    "TURSO"
-  ]
+  "cSpell.words": ["libsql", "TURSO"]
 }

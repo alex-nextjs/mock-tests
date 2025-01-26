@@ -11,31 +11,37 @@ import {
   Users,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 const steps = [
   {
     title: 'Sign Up',
-    description: 'Create your account in seconds to start your learning journey.',
+    description:
+      'Create your account in seconds to start your learning journey.',
     icon: UserPlus,
   },
   {
     title: 'Explore Courses',
-    description: 'Browse through our wide range of curated courses tailored to your needs.',
+    description:
+      'Browse through our wide range of curated courses tailored to your needs.',
     icon: Search,
   },
   {
     title: 'Take Practice Tests',
-    description: 'Practice with interactive mock tests and real-time feedback to sharpen your skills.',
+    description:
+      'Practice with interactive mock tests and real-time feedback to sharpen your skills.',
     icon: ClipboardList,
   },
   {
     title: 'Track Progress',
-    description: 'Monitor your performance and set milestones to stay on track.',
+    description:
+      'Monitor your performance and set milestones to stay on track.',
     icon: LineChart,
   },
   {
     title: 'Join the Community',
-    description: 'Connect with fellow aspirants and mentors to grow collaboratively.',
+    description:
+      'Connect with fellow aspirants and mentors to grow collaboratively.',
     icon: Users,
   },
 ];
@@ -78,16 +84,16 @@ function MobileStepCard({
       id={`index-card-${index}`}
       className="flex flex-col items-center"
       initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      animate={isInView ? 'visible' : 'hidden'}
       variants={{
         visible: {
-          transition: { staggerChildren: 0.2, delayChildren: 0.1 }
-        }
+          transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+        },
       }}
     >
       <motion.div
         className={cn(
-          "w-[85%] bg-white dark:bg-neutral-800 rounded-xl border-2 border-gray-200 dark:border-neutral-700 p-6 relative z-10"
+          'w-[85%] bg-white dark:bg-neutral-800 rounded-xl border-2 border-gray-200 dark:border-neutral-700 p-6 relative z-10'
         )}
         variants={mobileCardVariants}
         transition={{ duration: 0.5 }}
@@ -100,7 +106,9 @@ function MobileStepCard({
           >
             <step.icon className="w-6 h-6 text-white" />
           </motion.div>
-          <h3 className="text-xl font-semibold dark:text-gray-200">{step.title}</h3>
+          <h3 className="text-xl font-semibold dark:text-gray-200">
+            {step.title}
+          </h3>
         </div>
         <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
       </motion.div>
@@ -209,7 +217,7 @@ export function HowItWorksTimelineCards() {
           ) : (
             <motion.div
               initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
+              animate={isInView ? 'visible' : 'hidden'}
               variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
             >
               <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-200 dark:bg-neutral-700" />
@@ -221,27 +229,35 @@ export function HowItWorksTimelineCards() {
                   variants={desktopCardVariants}
                   transition={{ duration: 0.5 }}
                 >
-                  <div className={`w-5/12 relative ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}>
+                  <div
+                    className={`w-5/12 relative ${index % 2 === 0 ? 'mr-8' : 'ml-8'}`}
+                  >
                     <motion.div
                       className={cn(
-                        "bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm p-6 rounded-lg border border-gray-200 dark:border-neutral-700",
-                        "relative hover:shadow-lg transition-shadow",
-                        index % 2 === 0 ? "hover:-translate-x-2" : "hover:translate-x-2",
+                        'bg-white/90 dark:bg-neutral-800/90 backdrop-blur-sm p-6 rounded-lg border border-gray-200 dark:border-neutral-700',
+                        'relative hover:shadow-lg transition-shadow',
+                        index % 2 === 0
+                          ? 'hover:-translate-x-2'
+                          : 'hover:translate-x-2',
                         `before:absolute before:top-1/2 before:-translate-y-1/2 before:border-[12px] before:border-transparent`,
                         index % 2 === 0
-                          ? "before:-left-[24px] before:border-r-gray-200 dark:before:border-r-neutral-700 after:-left-[20px] after:border-r-white dark:after:border-r-neutral-800"
-                          : "before:-right-[24px] before:border-l-gray-200 dark:before:border-l-neutral-700 after:-right-[20px] after:border-l-white dark:after:border-l-neutral-800"
+                          ? 'before:-left-[24px] before:border-r-gray-200 dark:before:border-r-neutral-700 after:-left-[20px] after:border-r-white dark:after:border-r-neutral-800'
+                          : 'before:-right-[24px] before:border-l-gray-200 dark:before:border-l-neutral-700 after:-right-[20px] after:border-l-white dark:after:border-l-neutral-800'
                       )}
                       whileHover={{ scale: 1.02 }}
                     >
-                      <h3 className="text-xl font-semibold mb-2 dark:text-gray-200">{step.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
+                      <h3 className="text-xl font-semibold mb-2 dark:text-gray-200">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {step.description}
+                      </p>
                     </motion.div>
                   </div>
                   <motion.div
                     className={cn(
-                      "w-12 h-12 absolute left-1/2 transform -translate-x-1/2 -translate-y-4",
-                      "flex items-center justify-center bg-teal-600 dark:bg-teal-700 rounded-full z-20 shadow-md"
+                      'w-12 h-12 absolute left-1/2 transform -translate-x-1/2 -translate-y-4',
+                      'flex items-center justify-center bg-teal-600 dark:bg-teal-700 rounded-full z-20 shadow-md'
                     )}
                     variants={iconVariants}
                     transition={{ type: 'spring', stiffness: 200 }}
@@ -262,16 +278,17 @@ export function HowItWorksTimelineCards() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-16 text-center relative z-10"
         >
-          <MotionButton
-            size="lg"
-            className="px-8 py-3 text-lg bg-teal-600 hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-800 text-white shadow-md hover:shadow-lg transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started Now
-          </MotionButton>
+          <Link href="/auth/register">
+            <MotionButton
+              size="lg"
+              className="px-8 py-3 text-lg bg-teal-600 hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-800 text-white shadow-md hover:shadow-lg transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Started Now
+            </MotionButton>
+          </Link>
         </motion.div>
-
       </div>
     </section>
   );
