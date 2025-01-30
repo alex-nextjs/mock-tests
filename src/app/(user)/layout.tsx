@@ -25,7 +25,7 @@ export default function DashboardLayout({
           <SidebarInset className="flex-1 overflow-auto bg-white dark:bg-slate-900">
             <main>
               <div className="flex items-center justify-between p-4 border-b lg:hidden">
-                <SidebarTrigger className="lg:hidden bg-white h-10 w-10" />
+                <SidebarTrigger className=" lg:hidden h-10 w-10" />
                 <div className="flex items-center space-x-4">
                   <BackButton />
                   <Breadcrumb />

@@ -52,7 +52,12 @@ export const navigation = [
     icon: FolderCheck,
     section: 'dashboard',
   },
-  { name: 'Free Tests & Quizzes', href: '/free-materials', icon: Clock1, section: 'dashboard' },
+  {
+    name: 'Free Tests & Quizzes',
+    href: '/free-materials',
+    icon: Clock1,
+    section: 'dashboard',
+  },
   {
     name: 'Typing Tests',
     href: '/typing-tests',
@@ -135,7 +140,7 @@ export function DashboardSidebar() {
                         'h-10 hover:bg-teal-50 hover:ring-2 hover:ring-teal-400 hover:dark:ring-white/50 hover:text-teal-900 dark:hover:bg-teal-900/50 dark:hover:text-teal-100 rounded-none rounded-r-md',
                         'focus-visible:bg-teal-50 focus-visible:text-teal-900 dark:focus-visible:bg-teal-900/50 dark:focus-visible:text-teal-100 ',
                         pathname === item.href &&
-                        'bg-teal-700 text-white dark:bg-teal-500 dark:text-black pointer-events-none'
+                          'bg-teal-700 text-white dark:bg-teal-500 dark:text-black pointer-events-none'
                       )}
                     >
                       <Link
@@ -165,7 +170,7 @@ export function DashboardSidebar() {
                         'h-10 hover:bg-teal-50 hover:ring-2 hover:ring-teal-400 hover:dark:ring-white/50 hover:text-teal-900 dark:hover:bg-teal-900/50 dark:hover:text-teal-100',
                         'focus-visible:bg-teal-50 focus-visible:text-teal-900 dark:focus-visible:bg-teal-900/50 dark:focus-visible:text-teal-100',
                         pathname === item.href &&
-                        'bg-teal-700 text-white dark:bg-teal-500 dark:text-black pointer-events-none'
+                          'bg-teal-700 text-white dark:bg-teal-500 dark:text-black pointer-events-none'
                       )}
                     >
                       <Link
